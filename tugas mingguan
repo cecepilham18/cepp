@@ -1,0 +1,91 @@
+CREATE TABLE
+MariaDB [moreevent]> create table berita(
+    -> id_event char(10) not null primary key,
+    -> judul varchar(20) not null,
+    -> tgl_posting varchar(30));
+Query OK, 0 rows affected (1.91 sec)
+
+INSERT
+MariaDB [moreevent]> insert into berita
+    -> values('01','Kickfest','20 April 2021');
+Query OK, 1 row affected (1.73 sec)
+
+MariaDB [moreevent]> insert into berita
+    -> values('02','Wall of fades','20 Mei 2021');
+Query OK, 1 row affected (0.42 sec)
+
+MariaDB [moreevent]> insert into berita
+    -> values('03','Uss feed','20 Juli 2021');
+Query OK, 1 row affected (0.40 sec)
+
+SELECT
+MariaDB [moreevent]> select * from berita;
++----------+---------------+---------------+
+| id_event | judul         | tgl_posting   |
++----------+---------------+---------------+
+| 01       | Kickfest      | 20 April 2021 |
+| 02       | Wall of fades | 20 Mei 2021   |
+| 03       | Uss feed      | 20 Juli 2021  |
++----------+---------------+---------------+
+3 rows in set (0.00 sec)
+
+CREATE TABLE
+MariaDB [moreevent]> create table daftar(
+    -> email varchar(30) not null primary key,
+    -> username varchar(20) not null,
+    -> password varchar(20));
+Query OK, 0 rows affected (1.85 sec)
+
+INSERT
+MariaDB [moreevent]> insert into daftar
+    -> values('tama@gmail.com','tamayakun','tama123');
+Query OK, 1 row affected (1.71 sec)
+
+MariaDB [moreevent]> insert into daftar
+    -> values('rangga@gmail.com','rangga','rangga123');
+Query OK, 1 row affected (0.08 sec)
+
+MariaDB [moreevent]> insert into daftar
+    -> values('karel@gmail.com','karel','karel123');');
+Query OK, 1 row affected (0.03 sec)
+
+SELECT
+MariaDB [moreevent]> select * from daftar;
++------------------+-----------+-----------+
+| email            | username  | password  |
++------------------+-----------+-----------+
+| karel@gmail.com  | karel     | karel123  |
+| rangga@gmail.com | rangga    | rangga123 |
+| tama@gmail.com   | tamayakun | tama123   |
++------------------+-----------+-----------+
+3 rows in set (0.00 sec)
+
+CREATE TABLE
+MariaDB [moreevent]> create table pengguna(
+    -> email varchar(20) not null primary key,
+    -> password varchar(20) not null);
+Query OK, 0 rows affected (1.95 sec)
+
+INSERT
+MariaDB [moreevent]> insert into pengguna
+    -> values ('karel@gmail.com','karel123');
+Query OK, 1 row affected (1.74 sec)
+
+MariaDB [moreevent]> insert into pengguna
+    -> values ('rangga@gmail.com','rangga123');
+Query OK, 1 row affected (0.07 sec)
+
+MariaDB [moreevent]> insert into pengguna
+    -> values ('tama@gmail.com','tama123');
+Query OK, 1 row affected (0.38 sec)
+
+SELECT
+MariaDB [moreevent]> select * from pengguna;
++------------------+-----------+
+| email            | password  |
++------------------+-----------+
+| karel@gmail.com  | karel123  |
+| rangga@gmail.com | rangga123 |
+| tama@gmail.com   | tama123   |
++------------------+-----------+
+3 rows in set (0.00 sec)
